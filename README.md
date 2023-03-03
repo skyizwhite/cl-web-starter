@@ -29,3 +29,4 @@ $ .qlot/bin/lake spec
 - [ ] Implement simple CRUD operations
 - [ ] Add test suite for CRUD operations
 - [ ] Create Docker image
+- [ ] Setup CI/CD using GitHub Actions
