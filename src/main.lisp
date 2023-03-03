@@ -13,7 +13,7 @@
 (defun start-server ()
   (when *server-handler*
     (error "Server is already started"))
-  (setf *server-handler* (clack:clackup *app* :port 4000)))
+  (setf *server-handler* (clack:clackup *app*)))
 
 (defun stop-server ()
   (unless *server-handler*
