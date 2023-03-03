@@ -4,5 +4,8 @@
   (:mix #:cl #:lake))
 (in-package #:lake-user)
 
+(task "server" ()
+  (sh ".qlot/bin/clackup -s project ./src/app.lisp"))
+
 (task "spec" ()
   (asdf:test-system :project))
