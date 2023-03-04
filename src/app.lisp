@@ -10,7 +10,7 @@
 
 (defparameter *app* (jingle:make-app))
 
-(register-routes *app*  
+(register-routes *app*
   ("/api/v1" ()
    ("/hello" (:get #'greet))))
 

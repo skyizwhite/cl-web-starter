@@ -1,7 +1,6 @@
 (uiop:define-package #:project
   (:nicknames #:project/main)
   (:use #:cl)
-  (:import-from #:jingle)
   (:import-from #:project/app
                 #:*app*)
   (:export #:start-server
