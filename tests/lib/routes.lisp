@@ -1,20 +1,20 @@
 (defpackage #:project-tests/lib/routes
   (:use :cl :rove)
   (:import-from #:project/lib/routes
-                #:register-handlers))
+                #:register-routes))
 (in-package #:project-tests/lib/routes)
 
-(deftest register-handlers-test
+(deftest register-routes-test
   (testing "Define routing for CRUD operations"
     (ok
      (expands
-      '(register-handlers *app*
-        ("/api/v1" ()
-         ("/users" (:get    #'list-users
-                    :post   #'create-user)
-          ("/:id"  (:get    #'show-user
-                    :put    #'update-user
-                    :delete #'destroy-user)))))
+      '(register-routes *app*
+        ("/api/v1"     ()
+         ("/users"     (:get    #'list-users
+                        :post   #'create-user))
+         ("/users/:id" (:get    #'show-user
+                        :put    #'update-user
+                        :delete #'destroy-user))))
       '(setf
         (jingle:route *app* "/api/v1/users" :method :get) #'list-users
         (jingle:route *app* "/api/v1/users" :method :post) #'create-user

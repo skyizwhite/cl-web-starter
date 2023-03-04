@@ -2,7 +2,7 @@
   (:use #:cl)
   (:import-from #:jingle)
   (:import-from #:project/lib/routes
-                #:register-handlers)
+                #:register-routes)
   (:import-from #:project/controllers/hello
                 #:greet)
   (:export #:*app*))
@@ -10,9 +10,8 @@
 
 (defparameter *app* (jingle:make-app))
 
-(register-handlers *app*
-  ("/api"     ()
-   ("/v1"     ()
-    ("/hello" (:get #'greet)))))
+(register-routes *app*  
+  ("/api/v1" ()
+   ("/hello" (:get #'greet))))
 
 *app*
