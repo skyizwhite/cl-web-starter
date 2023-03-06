@@ -6,3 +6,4 @@ ql cl-jingle
 ql mito
 ql rove
 ql lake
+ql closer-mop
