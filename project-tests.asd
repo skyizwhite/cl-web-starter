@@ -5,4 +5,4 @@
                "project-tests/domains/user"
                "project-tests/lib/routes"
                "project-tests/lib/validator")
-  :perform (test-op (o c) (symbol-call :rove '#:run c :style :dot)))
+  :perform (test-op (o c) (symbol-call :rove '#:run c)))
